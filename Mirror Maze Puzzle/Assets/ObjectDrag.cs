@@ -60,6 +60,10 @@ public class ObjectDrag : MonoBehaviour
                 rb.velocity = Vector3.zero;
             }
         }
+        else
+        {
+            rb.velocity = Vector3.zero;
+        }
     }
 
     Vector3 GetMouseWorldPos()
