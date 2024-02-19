@@ -36,7 +36,7 @@ public class LightBeam : MonoBehaviour
                     if(hit.collider.tag == "LightPointReciver")
                     {
                         hit.collider.GetComponent<Light>().enabled = true;
-                        GameController.Instance.ChangeGameState(GameController.GameState.Ended);
+                        GameController.Instance.OnLevelComplate();
                         enabled = false;
                     }
                     break;

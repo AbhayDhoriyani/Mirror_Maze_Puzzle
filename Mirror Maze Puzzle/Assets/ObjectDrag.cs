@@ -23,7 +23,7 @@ public class ObjectDrag : MonoBehaviour
 
     void OnMouseDown()
     {
-        if(GameController.Instance.GetGameState() == GameController.GameState.Ongoing)
+        if (GameController.Instance.canMove)
         {
             isDragging = true;
             mouseStartPosition = GetMouseWorldPos();
@@ -54,7 +54,7 @@ public class ObjectDrag : MonoBehaviour
             Vector3 force = movement * blockMoveSpeed;
             force = Vector3.ClampMagnitude(force, maxForce);
             rb.AddForce(force, ForceMode.Force);
-            if(GameController.Instance.GetGameState() == GameController.GameState.Ended)
+            if (!GameController.Instance.canMove)
             {
                 isDragging = false;
                 rb.velocity = Vector3.zero;
